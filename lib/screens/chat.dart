@@ -19,6 +19,11 @@ class ChatScreen extends StatelessWidget {
               color: Theme.of(context).colorScheme.primary,
             ),
           ),
+          const SizedBox(width: 10),
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.settings),
+          ),
         ],
       ),
       body: const Center(
