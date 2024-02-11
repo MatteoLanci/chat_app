@@ -1,5 +1,6 @@
-import 'package:chat_app/screens/auth.dart';
 import 'package:flutter/material.dart';
+
+import 'package:chat_app/screens/auth.dart';
 
 void main() {
   runApp(const App());
