@@ -28,6 +28,7 @@ class _AuthScreenState extends State<AuthScreen> {
   var _enteredUsername = '';
   File? _selectedImage;
   var _isAuthenticating = false;
+  bool _isVisible = true;
 
   void _submit() async {
     final isValid = _form.currentState!.validate();
@@ -152,9 +153,22 @@ class _AuthScreenState extends State<AuthScreen> {
                               },
                             ),
                           TextFormField(
-                            decoration:
-                                const InputDecoration(labelText: 'Password'),
-                            obscureText: true,
+                            decoration: InputDecoration(
+                              labelText: 'Password',
+                              suffixIcon: IconButton(
+                                onPressed: () {
+                                  setState(() {
+                                    _isVisible = !_isVisible;
+                                  });
+                                },
+                                icon: Icon(
+                                  _isVisible
+                                      ? Icons.visibility
+                                      : Icons.visibility_off,
+                                ),
+                              ),
+                            ),
+                            obscureText: _isVisible,
                             validator: (value) {
                               if (value == null || value.trim().length < 6) {
                                 return 'Password must be at least 6 characters long.';
