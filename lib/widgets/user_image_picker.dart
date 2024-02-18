@@ -12,7 +12,9 @@ class UserImagePicker extends StatefulWidget {
   final void Function(File pickedImage) onPickImage;
 
   @override
-  State<UserImagePicker> createState() => _UserImagePickerState();
+  State<UserImagePicker> createState() {
+    return _UserImagePickerState();
+  }
 }
 
 class _UserImagePickerState extends State<UserImagePicker> {
@@ -51,9 +53,11 @@ class _UserImagePickerState extends State<UserImagePicker> {
           icon: const Icon(Icons.image),
           label: Text(
             'Add Image',
-            style: TextStyle(color: Theme.of(context).colorScheme.primary),
+            style: TextStyle(
+              color: Theme.of(context).colorScheme.primary,
+            ),
           ),
-        ),
+        )
       ],
     );
   }
